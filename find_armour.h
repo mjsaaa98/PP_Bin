@@ -54,7 +54,7 @@ public:
     find_armour();
     void clear_data();   //切换指令时清空所有数据
     void Clear();   //清空所有数据结构
-    Mat roi(Mat img,Point center,float d/*,float k*/);
+    Mat roi(Mat img,Point center,float d,float h);
     int Armor_Bin(Mat);
     Mat roi2bin(Mat img,Point center,float d,float h);
     float Point_Angle(const Point2f &p1,const Point2f &p2)
@@ -79,6 +79,7 @@ public:
     vector<Point2f> Rotate_Point;
 private:
     vector<float> diameters;
+    vector<float> Heights,big_Heights;
     vector<Point2f> armour_center;
     vector<float> big_diameters;
     vector<Point2f> big_armour_center;
@@ -96,7 +97,7 @@ private:
     Point2f last_center;
     Mat img_ROI;
     float last_d;
-    float last_angle;
+    float last_h;
     Size2f last_size;
 
     int cols = 1280;

@@ -9,7 +9,7 @@
 
 
 //#define OPEN_SERIAL
-#define VIDEO
+//#define VIDEO
 #define CAMERA_DEBUG
 //#define F640
 class ImgFactory

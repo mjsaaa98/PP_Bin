@@ -4,7 +4,7 @@
 #include <mutex>
 #include <ImgFactory.h>
 
-FileStorage fs(".././PP_Bin_Pro/canshu.yaml",FileStorage::READ);
+FileStorage fs(".././PP_Bin-master/canshu.yaml",FileStorage::READ);
 
 /**
  * @brief set_camera_para 设置摄像头的参数
@@ -13,8 +13,8 @@ FileStorage fs(".././PP_Bin_Pro/canshu.yaml",FileStorage::READ);
 void set_camera_para(int fd1)
 {
     v4l2_set vs(fd1);
-//    vs.set_saturation(saturaion);      //饱和度
-//    vs.set_exposure(60);     //曝光
+    vs.set_saturation(128);      //饱和度
+    vs.set_exposure(22);     //曝光
 //    vs.set_contrast(contrast);    //对比度
 //    vs.set_gain(gain);         //增益
 //    vs.set_brightness(brightness);   //亮度
@@ -24,7 +24,7 @@ void set_camera_para(int fd1)
 
 int main()
 {
-    int fd1 = open("/dev/video1",O_RDWR);
+    int fd1 = open("/dev/video2",O_RDWR);
     set_camera_para(fd1);
 
     ImgFactory imgfactory;

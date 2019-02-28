@@ -21,7 +21,7 @@ void ImgFactory::Img_read(){
     VideoCapture camera0;
     camera0.open(filename);
 #else
-    VideoCapture camera0(1);
+    VideoCapture camera0(2);
     camera0.set(CV_CAP_PROP_FRAME_WIDTH,1280);
     camera0.set(CV_CAP_PROP_FRAME_HEIGHT,720);
 #endif
@@ -144,10 +144,12 @@ void ImgFactory::Img_handle(){
         t3 = getTickCount();
         int fps_read = (t3-t1)/getTickFrequency()*1000;
         cout<<"time_pro:"<<fps_read<<"ms"<<endl;
+#ifdef SHOW_DEBUG
         imshow("frame",src);
         imshow("dst",dst);
-        int i = waitKey(0);
+        int i = waitKey(1);
         if( i=='q') break;
+#endif
     }
 #ifdef OPEN_SERIAL
     sp.Close();

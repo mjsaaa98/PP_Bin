@@ -26,9 +26,9 @@ iHighV: 255
 
 #find_armor.cpp's parameters
 x2h_rate_min1: 1.0
-x2h_rate_max1: 3.0
-x2h_rate_min2: 7.5
-x2h_rate_max2: 8.5
+x2h_rate_max1: 2.2
+x2h_rate_min2: 2.5
+x2h_rate_max2: 5.3
 angle_of_Rotated: 33
 k: 0.6
 area_rate_min: 2.5
